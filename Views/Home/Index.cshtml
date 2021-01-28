@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Classics_Shop.Models.Arival>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="showcase">
+    <div class="content1"></div>
+    <div class="content2">
+        <div>
+            <h4 class="display-4">ALL MEN’S COLLECTION</h4>
+            <h1>50% OFF</h1>
+            <br />
+            <br />
+
+            <a asp-controller="Products" asp-action="Index">Discover Now</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <h4 class="display-4 mt-5">Arrivals</h4>
+</div>
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class=" col-sm-3 col-md-3 col-lg-3">
+            <a asp-controller="Home" asp-action="Details" asp-route-Id="@item.ID">
+                <img class="img-thumbnail" src="./Catalog/Thumb/@item.ImagePath" style="border:none" alt="product_img" />
+            </a>
+            <span class="starts">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+            </span>
+            <div class="case m-4">
+                <h6>@item.ProductName</h6>
+                <h6 class="text-right price">@item.UnitPrice.ToString("c")</h6>
+            </div>
+        </div>
+
+    }
+</div>

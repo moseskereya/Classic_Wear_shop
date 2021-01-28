@@ -1,0 +1,43 @@
+﻿@model Classics_Shop.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h4>Details</h4>
+
+<h5>@Model.ProductName</h5>
+
+<div class="row">
+    <div class="col-md-6">
+        <img src="/Catalog/Thumb/@Model.ImagePath" class="img-fluid" alt="Alternate Text" />
+    </div>
+    <div class="col-md-6">
+        <div class="thumbnail">
+            <div class="figure-caption-details">
+                <h6 class="text-right ">@Model.UnitPrice.ToString("c")</h6>
+                <h5>
+                    <a>@Model.ProductName</a>
+                </h5>
+                <p> CategoryName : @Model.Category.CategoryName</p>
+                <p>Product Category Id : @Model.CategoryID</p>
+                <p>Product Id : @Model.ProductID</p>
+
+                <p>Product Description : @Model.Description</p>
+                <p>Ratings</p>
+                <span class="starts">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </span>
+                <div class="row1">
+                    <button class="btn btn-outline-dark">
+                        <a asp-controller="Products" asp-action="Index">Back</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
